@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>MedDecision — медико-маркетинговые дашборды</title>
+<meta name="description" content="Медико-маркетинговые дашборды MedDecision: GV-971, HQP-1351, BLD-011D1. Концепты для медицинских и фармацевтических работников.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;500;700;800&family=Noto+Sans+SC:wght@900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#2A2B31;
+  --gv:#2C9D69;   /* GV-971 — зелёный */
+  --hqp:#1C62CC;  /* HQP-1351 — голубой */
+  --bld:#E8392A;  /* BLD-011D1 — оранжево-красный */
+  --f:"Manrope",system-ui,-apple-system,sans-serif;
+  --fx:"Manrope",system-ui,sans-serif;
+  --fcjk:"Noto Sans SC","PingFang SC","Microsoft YaHei",var(--f);
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+html,body{margin:0;padding:0}
+body{background:var(--bg);color:#fff;font-family:var(--f);min-height:100vh;overflow-x:hidden}
+.page{position:relative;min-height:100vh;display:flex;flex-direction:column;align-items:center;overflow:hidden}
+
+/* ---- драконы: портрет — углы из мобильного макета (2000×3600) ---- */
+.drg{position:absolute;pointer-events:none;user-select:none;z-index:0}
+.drg.tl.m{top:0;left:1.4vw;width:29.45vw}   /* canvas 28,0 – 617,672 */
+.drg.br.m{right:0;bottom:.55vw;width:28vw}   /* canvas 1440,2891 – 2000,3589 */
+.drg.d{display:none}
+
+/* ---- центральная колонка ---- */
+.inner{position:relative;z-index:1;width:100%;display:flex;flex-direction:column;align-items:center;text-align:center}
+
+/* ---- заголовок (портрет) ---- */
+h1{margin:18.6vh 0 0;font-family:var(--fcjk);font-weight:900;
+   font-size:14.78vw;line-height:1;letter-spacing:0;
+   background:linear-gradient(90deg,#FFAF4A 0%,#FFA859 10%,#FFA168 20%,#FE9976 30%,#FE9185 40%,#FD8994 50%,#DE80A2 60%,#BE78B0 70%,#9A6EBF 80%,#7965CD 90%,#6B62D4 100%);
+   -webkit-background-clip:text;background-clip:text;color:transparent;-webkit-text-fill-color:transparent}
+h1 .ast{font-size:.45em;vertical-align:super}
+.sub{margin:2.05vh 0 0;font-weight:800;font-size:3.24vw;line-height:1.4;letter-spacing:.13em}
+
+/* ---- ссылки-кнопки (портрет) ---- */
+.nav{margin-top:10.2vh;display:flex;flex-direction:column;gap:5.5vh;align-items:center}
+.btn{display:inline-block;text-decoration:none;color:#fff;font-weight:800;
+     font-family:var(--fx);font-size:5.7vw;line-height:1.15;letter-spacing:0;
+     padding:.15em .6em;border-radius:.4em;border:2px solid transparent;
+     transition:color .18s ease,background-color .18s ease,border-color .18s ease,
+                box-shadow .18s ease,transform .18s ease}
+/* разрядка под ширину макета по кодам */
+.btn.gv{letter-spacing:-.0155em}
+.btn.hqp{letter-spacing:-.028em}
+.btn.bld{letter-spacing:-.011em}
+.btn:hover,.btn:focus-visible{transform:translateY(-2px)}
+.btn:active{transform:translateY(0)}
+/* GV-971 — зелёный */
+.btn.gv:hover,.btn.gv:focus-visible{background:rgba(44,157,105,.16);border-color:var(--gv);box-shadow:0 0 26px rgba(44,157,105,.55),inset 0 0 18px rgba(44,157,105,.22);color:#8FE6BE}
+.btn.gv:active{background:var(--gv);color:#08130D;box-shadow:0 0 34px rgba(44,157,105,.85)}
+/* HQP-1351 — голубой */
+.btn.hqp:hover,.btn.hqp:focus-visible{background:rgba(28,98,204,.16);border-color:var(--hqp);box-shadow:0 0 26px rgba(28,98,204,.55),inset 0 0 18px rgba(28,98,204,.22);color:#A9C8F7}
+.btn.hqp:active{background:var(--hqp);color:#fff;box-shadow:0 0 34px rgba(28,98,204,.85)}
+/* BLD-011D1 — оранжево-красный */
+.btn.bld:hover,.btn.bld:focus-visible{background:rgba(232,57,42,.16);border-color:var(--bld);box-shadow:0 0 26px rgba(232,57,42,.55),inset 0 0 18px rgba(232,57,42,.22);color:#FFB1AB}
+.btn.bld:active{background:var(--bld);color:#fff;box-shadow:0 0 34px rgba(232,57,42,.85)}
+
+/* ---- подвал ---- */
+.foot{margin-top:auto;position:relative;z-index:1;padding:0 24px 4.3vh;text-align:center;
+      width:fit-content;max-width:100%;
+      font-weight:300;font-size:2.06vw;letter-spacing:.234em;line-height:1.4;color:#fff}
+
+/* ---- плашка HCP (ниже первого экрана) ---- */
+.hcp{position:relative;z-index:1;margin:0 auto 22px;max-width:760px;
+     padding:11px 16px;border-radius:12px;background:#F2F2F3;color:#1C1D21;
+     font:700 13px/1.4 var(--f);text-align:center}
+
+.pbr{display:inline}
+/* ---- альбомная ориентация iPad: раскладка десктопного макета ---- */
+@media (orientation:landscape){
+  .pbr{display:none}
+  .drg.m{display:none}
+  .drg.d{display:block}
+  .drg.tl.d{top:0;left:3.19vw;width:19.88vw}
+  .drg.br.d{right:.80vw;bottom:0;width:21.46vw}
+  h1{margin-top:12.8vh;font-size:7.42vw}
+  .sub{margin-top:1.9vh;font-size:2.45vw;letter-spacing:.09em}
+  .nav{margin-top:8.4vh;gap:2.17vh}
+  .btn{font-size:4.25vw;border-radius:.3em}
+  .foot{padding-bottom:3.25vh;font-size:1.63vw;letter-spacing:.145em}
+}
+</style></head>
+<body>
+<div class="page">
+  <img class="drg tl m" src="assets/dragon-tl-mobile.png" alt="" aria-hidden="true">
+  <img class="drg br m" src="assets/dragon-br-mobile.png" alt="" aria-hidden="true">
+  <img class="drg tl d" src="assets/dragon-tl-desktop.png" alt="" aria-hidden="true">
+  <img class="drg br d" src="assets/dragon-br-desktop.png" alt="" aria-hidden="true">
+
+  <div class="inner">
+    <h1>数据看板<span class="ast">*</span></h1>
+    <p class="sub">*Медико-маркетинговый дашборд</p>
+
+    <nav class="nav" aria-label="Дашборды препаратов">
+      <a class="btn gv"  href="https://meddecision.github.io/meddecision-portfolio/oligomannat/">GV-971</a>
+      <a class="btn hqp" href="https://meddecision.github.io/meddecision-portfolio/olverembatinib/">HQP-1351</a>
+      <a class="btn bld" href="https://meddecision.github.io/meddecision-portfolio/iza-bren/">BLD-011D1</a>
+    </nav>
+  </div>
+
+  <div class="foot">Прорывная терапия из Китая<br class="pbr">для регистрации в России</div>
+</div>
+
+<div class="hcp">Информация предназначена для медицинских и фармацевтических работников. Концепт-макет MedDecision.</div>
+</body></html>
