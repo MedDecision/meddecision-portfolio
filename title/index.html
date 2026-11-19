@@ -31,10 +31,14 @@ body{background:var(--bg);color:#fff;font-family:var(--f);min-height:100vh;overf
 
 /* ---- заголовок ---- */
 h1{margin:12.8vh 0 0;font-family:var(--fcjk);font-weight:900;
-   font-size:7.42vw;line-height:1;letter-spacing:0;
-   background:linear-gradient(90deg,#FFAF4A 0%,#FFA859 10%,#FFA168 20%,#FE9976 30%,#FE9185 40%,#FD8994 50%,#DE80A2 60%,#BE78B0 70%,#9A6EBF 80%,#7965CD 90%,#6B62D4 100%);
-   -webkit-background-clip:text;background-clip:text;color:transparent;-webkit-text-fill-color:transparent}
-h1 .ast{font-size:.45em;vertical-align:super}
+   font-size:7.42vw;line-height:1;letter-spacing:0;color:#FD8994}
+h1 .ast{font-size:.45em;vertical-align:super;color:#7665CE;-webkit-text-fill-color:#7665CE}
+.tw{position:relative;display:inline-block}
+/* градиент на элементе с прямыми глифами — иначе в Safari заголовок прозрачный */
+@supports ((background-clip:text) or (-webkit-background-clip:text)){
+ .tw{background:linear-gradient(90deg,#FFAF4A 0%,#FFA859 10%,#FFA168 20%,#FE9976 30%,#FE9185 40%,#FD8994 50%,#DE80A2 60%,#BE78B0 70%,#9A6EBF 80%,#7965CD 90%,#6B62D4 100%);
+     -webkit-background-clip:text;background-clip:text;color:transparent;-webkit-text-fill-color:transparent}
+}
 .sub{margin:1.9vh 0 0;font-weight:800;font-size:2.45vw;line-height:1.35;letter-spacing:.09em}
 
 /* ---- ссылки-кнопки ---- */
@@ -75,7 +79,7 @@ h1 .ast{font-size:.45em;vertical-align:super}
   <img class="drg br" src="assets/dragon-br-desktop.png" alt="" aria-hidden="true">
 
   <div class="inner">
-    <h1>数据看板<span class="ast">*</span></h1>
+    <h1><span class="tw">数据看板</span><span class="ast">*</span></h1>
     <p class="sub">*Медико-маркетинговый дашборд</p>
 
     <nav class="nav" aria-label="Дашборды препаратов">
