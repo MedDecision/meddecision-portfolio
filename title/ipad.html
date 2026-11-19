@@ -65,14 +65,13 @@ h1 .ast{position:absolute;left:100%;top:-.15em;margin-left:.084em;font-size:.37e
 .btn.bld:active{background:var(--bld);color:#fff;box-shadow:0 0 34px rgba(232,57,42,.85)}
 
 /* ---- подвал ---- */
-.foot{margin-top:auto;position:relative;z-index:1;padding:0 24px 4.3vh;padding-left:calc(24px + .234em);text-align:center;
+.foot{margin-top:auto;position:relative;z-index:1;padding:0 24px 1vh;padding-left:calc(24px + .234em);text-align:center;
       width:fit-content;max-width:100%;
       font-weight:300;font-size:2.06vw;letter-spacing:.234em;line-height:1.4;color:#fff}
 
-/* ---- плашка HCP (ниже первого экрана) ---- */
-.hcp{position:relative;z-index:1;margin:0 auto 22px;max-width:760px;
-     padding:11px 16px;border-radius:12px;background:#F2F2F3;color:#1C1D21;
-     font:700 13px/1.4 var(--f);text-align:center}
+/* ---- сноска: информация для медработников, в самом низу страницы ---- */
+.note{position:relative;z-index:1;margin:.6vh auto 0;padding:0 16px 1.4vh;max-width:min(760px,40vw);text-align:center;
+      font-weight:400;font-size:6px;line-height:1.5;letter-spacing:.02em;color:rgba(255,255,255,.55)}
 
 .pbr{display:inline}
 /* ---- альбомная ориентация iPad: раскладка десктопного макета ---- */
@@ -87,7 +86,7 @@ h1 .ast{position:absolute;left:100%;top:-.15em;margin-left:.084em;font-size:.37e
   .sub{margin-top:1.9vh;padding-left:0;font-size:2.45vw;letter-spacing:.09em}
   .nav{margin-top:8.4vh;gap:2.17vh}
   .btn{font-size:4.25vw;border-radius:.3em}
-  .foot{padding-bottom:3.25vh;padding-left:24px;font-size:1.63vw;letter-spacing:.145em}
+  .foot{padding-bottom:1vh;padding-left:24px;font-size:1.63vw;letter-spacing:.145em}
 }
 </style></head>
 <body>
@@ -109,7 +108,6 @@ h1 .ast{position:absolute;left:100%;top:-.15em;margin-left:.084em;font-size:.37e
   </div>
 
   <div class="foot">Прорывная терапия из Китая<br class="pbr">для регистрации в России</div>
+  <div class="note">Информация предназначена для медицинских и фармацевтических работников. Концепт-макет MedDecision.</div>
 </div>
-
-<div class="hcp">Информация предназначена для медицинских и фармацевтических работников. Концепт-макет MedDecision.</div>
 </body></html>
